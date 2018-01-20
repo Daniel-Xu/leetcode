@@ -61,6 +61,15 @@ defmodule LeetcodeTest do
     assert LetterCombination.run("23") == ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
     assert LetterCombination.run("234") ==
       ["adg","adh","adi","aeg","aeh","aei","afg","afh","afi","bdg","bdh","bdi","beg","beh","bei","bfg","bfh","bfi","cdg","cdh","cdi","ceg","ceh","cei","cfg","cfh","cfi"]
+  end
+
+  test "valid ()" do
+    assert ValidParen.run("()[]{}") == true
+    assert ValidParen.run("([()]{})") == true
+    assert ValidParen.run("([)]{})") == false
+    assert ValidParen.run("(]") == false
+    assert ValidParen.run("([)]") == false
+  end
 
   end
 end
