@@ -38,4 +38,15 @@ defmodule LeetcodeTest do
     assert ReverseInteger.run(-123) == -321
     assert ReverseInteger.run(120) == 21
   end
+
+  test "Most Water" do
+    assert MostWater.run([1, 1]) == 1
+  end
+
+  test "Roman to i" do
+    assert RomanToI.run("DCXXI") == 621
+    assert RomanToI.run("XCVIII") == 98
+    assert RomanToI.run("CCXXDIV") == 704
+    assert RomanToI.run("CCXXXIV") == 234
+  end
 end
