@@ -11,4 +11,13 @@ defmodule LeetcodeTest do
     assert AddTwoNumbers.run([], [0, 1]) == [0, 1]
     assert AddTwoNumbers.run([9, 9], [1]) == [0, 0, 1]
   end
+
+  test "longest sub str" do
+    assert LongestSubstr.longest_sub_str("pwwkew") == "pw"
+    assert LongestSubstr.longest_sub_str("wwkew") == "w"
+    assert LongestSubstr.longest_sub_str("wkew") == "wke"
+    assert LongestSubstr.run("pwwkew") == 3
+    assert LongestSubstr.run("bbbbb") == 1
+    assert LongestSubstr.run("abcabcbb") == 3
+  end
 end
