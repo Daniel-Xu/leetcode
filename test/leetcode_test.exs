@@ -56,4 +56,11 @@ defmodule LeetcodeTest do
       [-1, -1, 2]
     ]
   end
+
+  test "letter combination" do
+    assert LetterCombination.run("23") == ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    assert LetterCombination.run("234") ==
+      ["adg","adh","adi","aeg","aeh","aei","afg","afh","afi","bdg","bdh","bdi","beg","beh","bei","bfg","bfh","bfi","cdg","cdh","cdi","ceg","ceh","cei","cfg","cfh","cfi"]
+
+  end
 end
