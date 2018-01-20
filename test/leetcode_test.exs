@@ -20,4 +20,22 @@ defmodule LeetcodeTest do
     assert LongestSubstr.run("bbbbb") == 1
     assert LongestSubstr.run("abcabcbb") == 3
   end
+
+  test "meidian of tow array" do
+    assert MedianOfTwoArray.run([1,2], [3, 4]) == 2.5
+    assert MedianOfTwoArray.run([1,3], [2]) == 2
+    assert MedianOfTwoArray.run([1], []) == 1
+    assert MedianOfTwoArray.run([1], [2]) == 1.5
+    assert MedianOfTwoArray.run([], []) == nil
+  end
+
+  # test "longest Palindromic substr" do
+  #   assert LongestPalStr.run() == ""
+  # end
+
+  test "reverse integer" do
+    assert ReverseInteger.run(123) == 321
+    assert ReverseInteger.run(-123) == -321
+    assert ReverseInteger.run(120) == 21
+  end
 end
