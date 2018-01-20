@@ -71,5 +71,9 @@ defmodule LeetcodeTest do
     assert ValidParen.run("([)]") == false
   end
 
+  test "merge sorted list" do
+    assert MergeList.run([1, 2, 4], [1, 3, 4]) == [1, 1, 2, 3, 4, 4]
+    assert MergeList.run([1], [1, 3, 4]) == [1, 1, 3, 4]
+    assert MergeList.run([1, 2, 5], [1, 4]) == [1, 1, 2, 4, 5]
   end
 end
