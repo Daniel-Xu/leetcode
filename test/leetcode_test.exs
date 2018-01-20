@@ -49,4 +49,11 @@ defmodule LeetcodeTest do
     assert RomanToI.run("CCXXDIV") == 704
     assert RomanToI.run("CCXXXIV") == 234
   end
+
+  test "3sum" do
+    assert ThreeSum.run([-1, 0, 1, 2, -1, -4]) == [
+      [-1, 0, 1],
+      [-1, -1, 2]
+    ]
+  end
 end
