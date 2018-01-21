@@ -142,4 +142,12 @@ defmodule LeetcodeTest do
       ]
   end
 
+  test "group anagrams" do
+    assert GroupAnagrams.run(["eat", "tea", "tan", "ate", "nat", "bat"]) ==
+      [
+        ["ate", "tea", "eat"],
+        ["nat","tan"],
+        ["bat"]
+      ] |> Enum.sort()
+  end
 end
