@@ -97,4 +97,18 @@ defmodule LeetcodeTest do
     assert StrStr.run("aaaaa", "bba") == -1
     assert StrStr.run("abaaaa", "aaa") == 2
   end
+
+  test "permutation" do
+    assert Permutation.run([2]) == [[2]]
+    assert Permutation.run([1,2]) == [[1, 2], [2, 1]]
+    assert Permutation.run([1,2,3]) ==
+      [
+        [1,2,3],
+        [1,3,2],
+        [2,1,3],
+        [2,3,1],
+        [3,1,2],
+        [3,2,1]
+      ]
+  end
 end
