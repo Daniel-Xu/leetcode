@@ -155,4 +155,9 @@ defmodule LeetcodeTest do
     assert MaxSubarray.run([-2,1,-3,4,-1,2,1,-5,4]) == 6
     assert MaxSubarray.run([1, 2, -3, -4, 2, 7, -2, 3]) == 10
   end
+
+  test "longest increasing seq" do
+    assert LongestIncreasingSeq.run([5, 3, 4, 8, 6, 7]) == 4
+    assert LongestIncreasingSeq.run([10, 9, 2, 5, 3, 7, 101, 18]) == 4
+  end
 end
