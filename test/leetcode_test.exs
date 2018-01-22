@@ -160,4 +160,9 @@ defmodule LeetcodeTest do
     assert LongestIncreasingSeq.run([5, 3, 4, 8, 6, 7]) == 4
     assert LongestIncreasingSeq.run([10, 9, 2, 5, 3, 7, 101, 18]) == 4
   end
+
+  test "sell stock" do
+    assert SellStock.run([7, 1, 5, 3, 6, 4]) == 5
+    assert SellStock.run([7, 6, 4, 3, 1]) == 0
+  end
 end
