@@ -150,4 +150,9 @@ defmodule LeetcodeTest do
         ["bat"]
       ] |> Enum.sort()
   end
+
+  test "max subarray" do
+    assert MaxSubarray.run([-2,1,-3,4,-1,2,1,-5,4]) == 6
+    assert MaxSubarray.run([1, 2, -3, -4, 2, 7, -2, 3]) == 10
+  end
 end
