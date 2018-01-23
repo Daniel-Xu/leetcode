@@ -24,7 +24,7 @@ defmodule Triangle do
         update(i, j, v, m)
       end)
     end)
-    |> Enum.filter(fn {{r, _}, v} = x -> r == len-1 end)
+    |> Enum.filter(fn {{r, _}, v} -> r == len-1 end)
     |> Enum.map(&elem(&1, 1))
     |> Enum.min()
   end

@@ -189,4 +189,12 @@ defmodule LeetcodeTest do
         [4,1,8,3]
       ]) == 11
   end
+
+  test "perfect square" do
+    assert PerfectSquare.run(3) == 3
+    assert PerfectSquare.run(9) == 1
+    assert PerfectSquare.run(4) == 1
+    assert PerfectSquare.run(13) == 2
+    assert PerfectSquare.run(19293) == 3
+  end
 end
