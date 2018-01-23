@@ -165,4 +165,11 @@ defmodule LeetcodeTest do
     assert SellStock.run([7, 1, 5, 3, 6, 4]) == 5
     assert SellStock.run([7, 6, 4, 3, 1]) == 0
   end
+
+  test "unique path" do
+    assert UniquePath.run(1, 1) == 1
+    assert UniquePath.run(3, 3) == 6
+    assert UniquePath.run(5, 8) == 330
+    assert UniquePath.run(11, 7) == 8008
+  end
 end
