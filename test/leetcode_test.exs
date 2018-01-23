@@ -179,4 +179,14 @@ defmodule LeetcodeTest do
     assert ClimbStairs.run(19) == 6765
     assert ClimbStairs.run(9) == 55
   end
+
+  test "triangle" do
+    assert Triangle.run(
+      [
+        [2],
+        [3,4],
+        [6,5,7],
+        [4,1,8,3]
+      ]) == 11
+  end
 end
