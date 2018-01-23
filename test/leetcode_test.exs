@@ -172,4 +172,11 @@ defmodule LeetcodeTest do
     assert UniquePath.run(5, 8) == 330
     assert UniquePath.run(11, 7) == 8008
   end
+
+  test "climb stairs" do
+    assert ClimbStairs.run(2) == 2
+    assert ClimbStairs.run(3) == 3
+    assert ClimbStairs.run(19) == 6765
+    assert ClimbStairs.run(9) == 55
+  end
 end
