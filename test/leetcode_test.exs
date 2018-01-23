@@ -197,4 +197,11 @@ defmodule LeetcodeTest do
     assert PerfectSquare.run(13) == 2
     assert PerfectSquare.run(19293) == 3
   end
+
+  test "unique BST" do
+    assert UniqueBst.run(1) == 1
+    assert UniqueBst.run(2) == 2
+    assert UniqueBst.run(3) == 5
+    assert UniqueBst.run(17) == 129644790
+  end
 end
