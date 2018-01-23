@@ -204,4 +204,10 @@ defmodule LeetcodeTest do
     assert UniqueBst.run(3) == 5
     assert UniqueBst.run(17) == 129644790
   end
+
+  test "edit distance" do
+    assert EditDistance.run("", "") == 0
+    assert EditDistance.run("whas up", "whosls") == 4
+    assert EditDistance.run("whas up", "whas so") == 2
+  end
 end
