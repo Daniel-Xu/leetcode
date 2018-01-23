@@ -36,4 +36,11 @@ defmodule Triangle do
                   Map.get(m, {i-1, j+1})] |> Enum.reject(&is_nil/1) ) + v
     Map.put(m, {i, j}, v)
   end
+
+  @doc """
+  Refactoring tips:
+  use O(N) to store the result,
+  = read from the bottom of the array
+  = replace the result from previous row
+  """
 end
