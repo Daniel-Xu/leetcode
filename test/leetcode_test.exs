@@ -29,9 +29,10 @@ defmodule LeetcodeTest do
     assert MedianOfTwoArray.run([], []) == nil
   end
 
-  # test "longest Palindromic substr" do
-  #   assert LongestPalStr.run() == ""
-  # end
+  test "longest Palindromic substr" do
+    assert LongestPalStr.run("babad") == "bab"
+    assert LongestPalStr.run("cbbd") == "bb"
+  end
 
   test "reverse integer" do
     assert ReverseInteger.run(123) == 321
