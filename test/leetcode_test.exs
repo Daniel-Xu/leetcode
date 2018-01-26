@@ -42,6 +42,7 @@ defmodule LeetcodeTest do
 
   test "Most Water" do
     assert MostWater.run([1, 1]) == 1
+    assert MostWater.run([8, 2, 5, 4, 7]) == 28
   end
 
   test "Roman to i" do
