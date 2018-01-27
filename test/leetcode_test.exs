@@ -212,4 +212,12 @@ defmodule LeetcodeTest do
     assert EditDistance.run("whas up", "whosls") == 4
     assert EditDistance.run("whas up", "whas so") == 2
   end
+
+  test "course schedule" do
+    assert CourseSchedule.run(2, [[1, 0]]) == true
+    assert CourseSchedule.run(2, [[1,0],[0,1]]) == false
+    assert CourseSchedule.run(3, [[1, 2], [2, 1]]) == false
+    assert CourseSchedule.run(3, [[1, 0], [2, 1]]) == true
+    assert CourseSchedule.run(3, [[1, 0], [2, 0]]) == true
+  end
 end
