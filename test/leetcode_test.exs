@@ -268,6 +268,7 @@ defmodule LeetcodeTest do
     assert TreeNode.post_order_traversal(tree) == [30, 22, 35, 18, 15, 14, 11, 25, 4, 8, 3]
     assert TreeNode.queue_traversal(tree) == [3, 15, 8, 22, 18, 14, 4, 30, 35, 11, 25]
     assert TreeNode.height(tree) == 4
+    assert TreeNode.build_bst_tree([2, 1, 3]) == %TreeNode{val: 2, left: %TreeNode{val: 1, left: nil, right: nil}, right: %TreeNode{val: 3, left: nil, right: nil}}
   end
 
   test "iterator" do
@@ -298,5 +299,64 @@ defmodule LeetcodeTest do
     n4 = TreeNode.new(3, nil, n3)
     assert BalancedTree.balance?(n3) == true
     assert BalancedTree.balance?(n4) == false
+  end
+
+  test "binary tree paths" do
+    n1 = TreeNode.new(2)
+    n2 = TreeNode.new(4)
+    n3 = TreeNode.new(3, n1, n2)
+    assert BinaryTreePaths.paths(n3) == ["3->2", "3->4"]
+    n1 = TreeNode.new(2, nil, TreeNode.new(5))
+    n2 = TreeNode.new(3)
+    n3 = TreeNode.new(1, n1, n2)
+    assert BinaryTreePaths.paths(n3) == ["1->2->5", "1->3"]
+
+    tree = %TreeNode{
+      val: 3,
+      left: %TreeNode{
+        val: 15,
+        left: %TreeNode{
+          val: 22,
+          left: %TreeNode{
+            val: 30
+          }
+        },
+        right: %TreeNode{
+          val: 18,
+          right: %TreeNode{
+            val: 35
+          }
+        }
+      },
+      right: %TreeNode{
+        val: 8,
+        left: %TreeNode{
+          val: 14
+        },
+        right: %TreeNode{
+          val: 4,
+          left: %TreeNode{
+            val: 11
+          },
+          right: %TreeNode{
+            val: 25
+          },
+        }
+      }
+    }
+    #             3
+    #           /   \
+    #          15    8
+    #        /  \   /  \
+    #      22  18  14   4
+    #     /      \     / \
+    #    30      35   11  25
+    assert BinaryTreePaths.paths(tree) == ["3->15->22->30", "3->15->18->35", "3->8->14", "3->8->4->11", "3->8->4->25"]
+  end
+
+  test "target sum" do
+    assert TargetSum.run([1, 1, 1, 1, 1], 3) == 5
+    assert TargetSum.run([1, 2,1,4,1], 6) == 0
+    assert TargetSum.run([1, 2,1,4,1], 7) == 3
   end
 end

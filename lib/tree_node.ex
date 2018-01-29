@@ -1,7 +1,7 @@
 defmodule TreeNode do
   defstruct(val: 0, left: nil, right: nil)
 
-  def new(v, left \\ nil, right \\ nil) do
+  def new(v \\ nil, left \\ nil, right \\ nil) do
     %TreeNode{val: v, left: left, right: right}
   end
 
@@ -36,5 +36,18 @@ defmodule TreeNode do
   def height(nil), do: 0
   def height(root) do
     Enum.max([height(root.left), height(root.right)]) + 1
+  end
+
+  def add_node(nil, v), do: TreeNode.new(v)
+  def add_node(%TreeNode{val: val, left: left, right: right}, v) when v > val,
+    do: TreeNode.new(val, left, add_node(right, v))
+  def add_node(%TreeNode{val: val, left: left, right: right}, v),
+    do: TreeNode.new(val, add_node(left, v), right)
+
+  @doc """
+  the order of nums should be the same with queue_traversal
+  """
+  def build_bst_tree(nums) do
+    Enum.reduce(nums, nil, &add_node(&2, &1))
   end
 end
