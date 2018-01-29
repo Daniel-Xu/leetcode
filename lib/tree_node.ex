@@ -32,4 +32,9 @@ defmodule TreeNode do
     children = Enum.filter([l, r], fn(x) -> not is_nil(x) end)
     do_queue_traversal(t ++ children, acc ++ [v])
   end
+
+  def height(nil), do: 0
+  def height(root) do
+    Enum.max([height(root.left), height(root.right)]) + 1
+  end
 end

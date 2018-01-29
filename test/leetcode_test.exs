@@ -267,6 +267,7 @@ defmodule LeetcodeTest do
     assert TreeNode.in_order_traversal(tree) == [30, 22, 15, 18, 35, 3, 14, 8, 11, 4, 25]
     assert TreeNode.post_order_traversal(tree) == [30, 22, 35, 18, 15, 14, 11, 25, 4, 8, 3]
     assert TreeNode.queue_traversal(tree) == [3, 15, 8, 22, 18, 14, 4, 30, 35, 11, 25]
+    assert TreeNode.height(tree) == 4
   end
 
   test "iterator" do
@@ -287,5 +288,15 @@ defmodule LeetcodeTest do
     assert i == %Iterator{stack: []}
     {n, _i} = Iterator.next(i)
     assert n == nil
+  end
+
+  test "balanced tree" do
+    n1 = TreeNode.new(2)
+    n2 = TreeNode.new(4)
+    n3 = TreeNode.new(3, n1, n2)
+
+    n4 = TreeNode.new(3, nil, n3)
+    assert BalancedTree.balance?(n3) == true
+    assert BalancedTree.balance?(n4) == false
   end
 end
