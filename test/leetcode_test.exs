@@ -220,4 +220,62 @@ defmodule LeetcodeTest do
     assert CourseSchedule.run(3, [[1, 0], [2, 1]]) == true
     assert CourseSchedule.run(3, [[1, 0], [2, 0]]) == true
   end
+
+  test "tree node" do
+    #             3
+    #           /   \
+    #          15    8
+    #        /  \   /  \
+    #      22  18  14   4
+    #     /      \     / \
+    #    30      35   11  25
+    tree = %TreeNode{
+      val: 3,
+      left: %TreeNode{
+        val: 15,
+        left: %TreeNode{
+          val: 22,
+          left: %TreeNode{
+            val: 30
+          }
+        },
+        right: %TreeNode{
+          val: 18,
+          right: %TreeNode{
+            val: 35
+          }
+        }
+      },
+      right: %TreeNode{
+        val: 8,
+        left: %TreeNode{
+          val: 14
+        },
+        right: %TreeNode{
+          val: 4,
+          left: %TreeNode{
+            val: 11
+          },
+          right: %TreeNode{
+            val: 25
+          },
+        }
+      }
+    }
+
+    assert TreeNode.pre_order_traversal(tree) == [3, 15, 22, 30, 18, 35, 8, 14, 4, 11, 25]
+    assert TreeNode.in_order_traversal(tree) == [30, 22, 15, 18, 35, 3, 14, 8, 11, 4, 25]
+    assert TreeNode.post_order_traversal(tree) == [30, 22, 35, 18, 15, 14, 11, 25, 4, 8, 3]
+    assert TreeNode.queue_traversal(tree) == [3, 15, 8, 22, 18, 14, 4, 30, 35, 11, 25]
+  end
+
+  test "iterator" do
+    # 3
+    #2 4
+    n1 = TreeNode.new(2)
+    n2 = TreeNode.new(4)
+    n3 = TreeNode.new(3, n1, n2)
+    assert Iterator.next(n3) == 3
+    assert Iterator.next(n3) == 3
+  end
 end
