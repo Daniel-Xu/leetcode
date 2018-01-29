@@ -275,7 +275,17 @@ defmodule LeetcodeTest do
     n1 = TreeNode.new(2)
     n2 = TreeNode.new(4)
     n3 = TreeNode.new(3, n1, n2)
-    assert Iterator.next(n3) == 3
-    assert Iterator.next(n3) == 3
+    i = Iterator.new(n3)
+    {n, i} = Iterator.next(i)
+    assert n == 2
+    {n, i} = Iterator.next(i)
+    assert n == 3
+    {n, i} = Iterator.next(i)
+    assert n == 4
+    {n, i} = Iterator.next(i)
+    assert n == nil
+    assert i == %Iterator{stack: []}
+    {n, _i} = Iterator.next(i)
+    assert n == nil
   end
 end
