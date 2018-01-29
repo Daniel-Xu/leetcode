@@ -359,4 +359,13 @@ defmodule LeetcodeTest do
     assert TargetSum.run([1, 2,1,4,1], 6) == 0
     assert TargetSum.run([1, 2,1,4,1], 7) == 3
   end
+
+  test "sum root to leaves" do
+    tree = TreeNode.new(1, TreeNode.new(2), TreeNode.new(3))
+    assert SumToLeaf.run(tree) == 25
+    tree = TreeNode.build_bst_tree([5, 3, 6, 2, 4, 9, 8])
+    assert SumToLeaf.run(tree) == 6764
+    tree = TreeNode.build_bst_tree([5, 3, 6, 2, 4, 9])
+    assert SumToLeaf.run(tree) == 1635
+  end
 end
