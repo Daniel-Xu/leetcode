@@ -5,12 +5,12 @@ defmodule PathSum2 do
 
   def dfs_visit(%TreeNode{left: nil, right: nil, val: v}, acc, target) do
     acc = acc ++ [v]
-    if Enum.sum(acc) == target, do: [acc], else: []
+    if target == Enum.sum(acc), do: [acc], else: []
   end
-  def dfs_visit(nil, _acc, _target), do: []
   def dfs_visit(root, acc, target) do
-    res_left = dfs_visit(root.left, acc ++ [root.val], target)
-    res_right = dfs_visit(root.right, acc ++ [root.val], target)
-    res_left ++ res_right
+    Enum.filter([root.left, root.right], fn x -> not is_nil(x) end)
+    |> Enum.reduce([], fn x, res ->
+      res ++ dfs_visit(x, acc ++ [root.val], target)
+    end)
   end
 end

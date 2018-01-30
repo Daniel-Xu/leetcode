@@ -369,7 +369,7 @@ defmodule LeetcodeTest do
     assert SumToLeaf.run(tree) == 1635
   end
 
-  test "path sum 2" do
+  test "path sum 1 & 2" do
     tree = %TreeNode{
       left: %TreeNode{
         val: 4,
@@ -391,6 +391,8 @@ defmodule LeetcodeTest do
       val: 5
     }
 
+    assert PathSum1.run(tree, 22) == true
+    assert PathSum1.run(tree, 100) == false
     assert PathSum2.run(tree, 22) ==
       [
         [5,4,11,2],
