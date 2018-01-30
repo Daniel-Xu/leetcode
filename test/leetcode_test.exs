@@ -435,4 +435,25 @@ defmodule LeetcodeTest do
     tree = TreeNode.build_bst_tree([5, 3, 6, 2, 4, 9])
     assert FlattenBinaryTree.run(tree) == [5, 3, 2, 4, 6, 9]
   end
+
+  test "symmetric tree" do
+    tree = %TreeNode{
+      left: %TreeNode{
+        left: TreeNode.new(3),
+        right: TreeNode.new(4),
+        val: 2
+      },
+      right: %TreeNode{
+        right: TreeNode.new(3),
+        left: TreeNode.new(4),
+        val: 2
+      },
+      val: 1
+    }
+
+    assert SymmetricTree.run(tree) == true
+    tree = TreeNode.build_bst_from_sorted_list([1,2, 3, 4, 5, 6])
+    assert SymmetricTree.run(tree) == false
+  end
+
 end
