@@ -407,4 +407,9 @@ defmodule LeetcodeTest do
     tree = TreeNode.build_bst_tree([5, 3, 6])
     assert MaxDepth.run(tree) == 2
   end
+
+  test "flatten binary tree" do
+    tree = TreeNode.build_bst_tree([5, 3, 6, 2, 4, 9])
+    assert FlattenBinaryTree.run(tree) == [5, 3, 2, 4, 6, 9]
+  end
 end
