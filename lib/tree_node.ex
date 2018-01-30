@@ -66,12 +66,27 @@ defmodule TreeNode do
   pre: mid left right [3,9,20,15,7]
   in:  left mid right [9,3,15,20,7]
   """
+  # In order and pre order always have the same length
   def build_tree_from_pre_in_order([], []), do: nil
   def build_tree_from_pre_in_order(pre_order, in_order) do
     root = hd(pre_order)
     i = Enum.find_index(in_order, fn x -> x == root end)
-    {l, [h|r]} = Enum.split(in_order, i)
-    {p_l, p_r} = Enum.split(tl(pre_order), length(l))
+    {l, [_h|r]} = Enum.split(in_order, i) #in order for left and right
+    {p_l, p_r} = Enum.split(tl(pre_order), length(l)) # pre order for left and right
     TreeNode.new(root, build_tree_from_pre_in_order(p_l, l), build_tree_from_pre_in_order(p_r, r))
+  end
+
+  @doc """
+  construct binary tree from in_order and post order traversal
+  in_order: [9,3,15,20,7] left mid right
+  post_order: [9,15,7,20,3] left right mid
+  """
+  def build_tree_from_in_post_order([], []), do: nil
+  def build_tree_from_in_post_order(in_order, post_order) do
+    root = List.last(post_order)
+    i = Enum.find_index(in_order, fn x -> x == root end)
+    {in_l, [_h|in_r]} = Enum.split(in_order, i)
+    {post_l, post_r} = Enum.split(List.delete_at(post_order, -1), length(in_l)) # post order for left and right
+    TreeNode.new(root, build_tree_from_in_post_order(in_l, post_l), build_tree_from_in_post_order(in_r, post_r))
   end
 end
