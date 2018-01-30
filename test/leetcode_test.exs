@@ -456,4 +456,10 @@ defmodule LeetcodeTest do
     assert SymmetricTree.run(tree) == false
   end
 
+  test "valid BST" do
+    tree = TreeNode.build_bst_from_sorted_list([1, 2, 3, 4, 5, 6, 7])
+    assert ValidBST.run(tree) == true
+    tree = TreeNode.new(10, TreeNode.new(10), TreeNode.new(1))
+    assert ValidBST.run(tree) == false
+  end
 end
