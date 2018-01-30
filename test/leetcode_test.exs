@@ -286,6 +286,9 @@ defmodule LeetcodeTest do
       }
 
     assert TreeNode.build_bst_from_sorted_list([-10,-3,0,5,9]) |> TreeNode.queue_traversal() == [0, -3, 9, -10, 5]
+
+    assert TreeNode.build_tree_from_pre_in_order([3,9,20,15,7], [9,3,15,20,7])
+    |> TreeNode.queue_traversal() == [3, 9, 20, 15, 7]
   end
 
   test "iterator" do

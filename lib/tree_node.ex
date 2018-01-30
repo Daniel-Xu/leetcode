@@ -6,7 +6,7 @@ defmodule TreeNode do
   end
 
   @doc """
-  left mid right
+  mid left right
   """
   def pre_order_traversal(nil), do: []
   def pre_order_traversal(root) do
@@ -14,7 +14,7 @@ defmodule TreeNode do
   end
 
   @doc """
-  mid left right
+  left mid right
   """
   def in_order_traversal(nil), do: []
   def in_order_traversal(root) do
@@ -59,5 +59,19 @@ defmodule TreeNode do
   def build_bst_from_sorted_list(nums) do
     {l, [h | r]} = Enum.split(nums, length(nums) |> div(2))
     TreeNode.new(h, build_bst_from_sorted_list(l), build_bst_from_sorted_list(r))
+  end
+
+  @doc """
+  construct binary tree from pre_order and inorder traversal
+  pre: mid left right [3,9,20,15,7]
+  in:  left mid right [9,3,15,20,7]
+  """
+  def build_tree_from_pre_in_order([], []), do: nil
+  def build_tree_from_pre_in_order(pre_order, in_order) do
+    root = hd(pre_order)
+    i = Enum.find_index(in_order, fn x -> x == root end)
+    {l, [h|r]} = Enum.split(in_order, i)
+    {p_l, p_r} = Enum.split(tl(pre_order), length(l))
+    TreeNode.new(root, build_tree_from_pre_in_order(p_l, l), build_tree_from_pre_in_order(p_r, r))
   end
 end
