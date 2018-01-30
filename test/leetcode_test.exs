@@ -368,4 +368,33 @@ defmodule LeetcodeTest do
     tree = TreeNode.build_bst_tree([5, 3, 6, 2, 4, 9])
     assert SumToLeaf.run(tree) == 1635
   end
+
+  test "path sum 2" do
+    tree = %TreeNode{
+      left: %TreeNode{
+        val: 4,
+        left: %TreeNode{
+          val: 11,
+          left: TreeNode.new(7),
+          right: TreeNode.new(2)
+        }
+      },
+      right: %TreeNode{
+        val: 8,
+        left: TreeNode.new(13),
+        right: %TreeNode{
+          val: 4,
+          left: TreeNode.new(5),
+          right: TreeNode.new(1)
+        }
+      },
+      val: 5
+    }
+
+    assert PathSum2.run(tree, 22) ==
+      [
+        [5,4,11,2],
+        [5,8,4,5]
+      ]
+    end
 end
