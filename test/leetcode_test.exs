@@ -398,5 +398,13 @@ defmodule LeetcodeTest do
         [5,4,11,2],
         [5,8,4,5]
       ]
-    end
+  end
+
+  test "max depth" do
+    tree = TreeNode.build_bst_tree([5, 3, 6, 2, 4, 9, 8])
+    assert MaxDepth.run(tree) == 4
+
+    tree = TreeNode.build_bst_tree([5, 3, 6])
+    assert MaxDepth.run(tree) == 2
+  end
 end
