@@ -50,4 +50,14 @@ defmodule TreeNode do
   def build_bst_tree(nums) do
     Enum.reduce(nums, nil, &add_node(&2, &1))
   end
+
+  @doc """
+  convert sorted list to binary search tree
+  """
+
+  def build_bst_from_sorted_list([]), do: nil
+  def build_bst_from_sorted_list(nums) do
+    {l, [h | r]} = Enum.split(nums, length(nums) |> div(2))
+    TreeNode.new(h, build_bst_from_sorted_list(l), build_bst_from_sorted_list(r))
+  end
 end

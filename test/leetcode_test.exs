@@ -269,6 +269,23 @@ defmodule LeetcodeTest do
     assert TreeNode.queue_traversal(tree) == [3, 15, 8, 22, 18, 14, 4, 30, 35, 11, 25]
     assert TreeNode.height(tree) == 4
     assert TreeNode.build_bst_tree([2, 1, 3]) == %TreeNode{val: 2, left: %TreeNode{val: 1, left: nil, right: nil}, right: %TreeNode{val: 3, left: nil, right: nil}}
+
+    assert TreeNode.build_bst_from_sorted_list([1,2,3,4,5,6]) ==
+      %TreeNode{
+        left: %TreeNode{
+          left: TreeNode.new(1),
+          right: TreeNode.new(3),
+          val: 2
+        },
+        right: %TreeNode{
+          left: TreeNode.new(5),
+          right: nil,
+          val: 6
+        },
+        val: 4
+      }
+
+    assert TreeNode.build_bst_from_sorted_list([-10,-3,0,5,9]) |> TreeNode.queue_traversal() == [0, -3, 9, -10, 5]
   end
 
   test "iterator" do
