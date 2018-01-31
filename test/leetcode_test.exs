@@ -481,4 +481,11 @@ defmodule LeetcodeTest do
     {n, _cache} = LRU.get(cache, 4)
     assert n == 4
   end
+  test "trie" do
+    t = Trie.new("apple")
+    t = Trie.insert(t, "ab")
+
+    assert Trie.contains?(t, "apple") == true
+    assert Trie.contains?(t, "able") == false
+  end
 end
