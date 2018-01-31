@@ -7,6 +7,7 @@ defmodule PathSum2 do
     acc = acc ++ [v]
     if target == Enum.sum(acc), do: [acc], else: []
   end
+
   def dfs_visit(root, acc, target) do
     Enum.filter([root.left, root.right], fn x -> not is_nil(x) end)
     |> Enum.reduce([], fn x, res ->

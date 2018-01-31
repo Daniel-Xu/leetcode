@@ -7,7 +7,9 @@ defmodule BinaryTreePaths do
     current = update_current(root.val, current)
     [current]
   end
+
   def process(nil, _current), do: []
+
   def process(root, current) do
     current = update_current(root.val, current)
     acc_left = process(root.left, current)

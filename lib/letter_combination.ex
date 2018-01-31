@@ -1,8 +1,14 @@
 defmodule LetterCombination do
-  @p %{"2" => ["a", "b", "c"], "3" => ["d", "e", "f"],
-       "4" => ["g", "h", "i"], "5" => ["j", "k", "l"],
-       "6" => ["m", "n", "o"], "7" => ["p", "q", "r", "s"],
-       "8" => ["t", "u", "v"], "9" => ["w", "x", "y", "z"]}
+  @p %{
+    "2" => ["a", "b", "c"],
+    "3" => ["d", "e", "f"],
+    "4" => ["g", "h", "i"],
+    "5" => ["j", "k", "l"],
+    "6" => ["m", "n", "o"],
+    "7" => ["p", "q", "r", "s"],
+    "8" => ["t", "u", "v"],
+    "9" => ["w", "x", "y", "z"]
+  }
 
   @doc """
   234 =>
@@ -16,7 +22,10 @@ defmodule LetterCombination do
   for x <- process(t), h <> x
   """
   def process(""), do: [""]
+
   def process(<<h::binary-1, t::binary>>) do
-    for x <- Map.get(@p, h), y <- process(t), do: x <> y
+    for x <- Map.get(@p, h),
+        y <- process(t),
+        do: x <> y
   end
 end

@@ -12,8 +12,9 @@ defmodule MostWater do
   """
   def run(heights) do
     n = length(heights)
-    Enum.reduce(1..n-1, 0, fn(i, max) ->
-      Enum.reduce(0..i-1, max, fn(j, max) ->
+
+    Enum.reduce(1..(n - 1), 0, fn i, max ->
+      Enum.reduce(0..(i - 1), max, fn j, max ->
         w = (i - j) * Enum.min([Enum.at(heights, i), Enum.at(heights, j)])
         if w > max, do: w, else: max
       end)

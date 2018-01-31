@@ -17,9 +17,10 @@ defmodule GenerateParen do
   ((() 3 1
   """
   def process(n, n, n, acc, m), do: MapSet.put(m, acc)
+
   def process(n, l, r, acc, m) do
     possible(n, l, r)
-    |> Enum.reduce(m, fn(b, m) ->
+    |> Enum.reduce(m, fn b, m ->
       {l, r} = if b == "(", do: {l + 1, r}, else: {l, r + 1}
       process(n, l, r, acc <> b, m)
     end)

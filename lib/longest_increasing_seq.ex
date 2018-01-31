@@ -13,11 +13,14 @@ defmodule LongestIncreasingSeq do
   5, 3, 4, 8
   """
   def process([], _current, max), do: max
+
   def process([h | t], current, max) do
-    l = Enum.reduce(current, 0, fn({v, l}, acc) ->
-      l = if h > v, do: l + 1, else: l
-      Enum.max([l, acc])
-    end)
-    process(t, [{h, l} |current], Enum.max([max, l]))
+    l =
+      Enum.reduce(current, 0, fn {v, l}, acc ->
+        l = if h > v, do: l + 1, else: l
+        Enum.max([l, acc])
+      end)
+
+    process(t, [{h, l} | current], Enum.max([max, l]))
   end
 end

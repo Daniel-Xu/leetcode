@@ -4,7 +4,10 @@ defmodule Permutation do
   end
 
   def process([]), do: [[]]
+
   def process(nums) do
-    for x <- nums, y <- process(List.delete(nums, x)), do: [x | y]
+    for x <- nums,
+        y <- process(List.delete(nums, x)),
+        do: [x | y]
   end
 end

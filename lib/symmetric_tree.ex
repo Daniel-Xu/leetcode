@@ -9,6 +9,7 @@ defmodule SymmetricTree do
 
   def process(_, true), do: false
   def process({[], []}, _stop), do: true
+
   def process(q, _stop) do
     {{:value, n1}, q} = :queue.out(q)
     {{:value, n2}, q} = :queue.out(q)

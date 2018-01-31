@@ -40,11 +40,13 @@ defmodule UniqueBst do
   """
   def run(0), do: 1
   def run(1), do: 1
+
   def run(n) do
     # n as root
-    Enum.reduce(2..n, %{0 => 1, 1 => 1}, fn(x, m) ->
+    Enum.reduce(2..n, %{0 => 1, 1 => 1}, fn x, m ->
       m = Map.put_new(m, x, 0)
-      Enum.reduce(0..x-1, m, fn(y, m) ->
+
+      Enum.reduce(0..(x - 1), m, fn y, m ->
         Map.update(m, x, 0, &(&1 + Map.get(m, y) * Map.get(m, x - y - 1)))
       end)
     end)

@@ -16,7 +16,7 @@ defmodule TargetSum do
   #   |> Enum.sum()
   # end
 
-  def dfs_visit([h|t], target, sum, acc) do
+  def dfs_visit([h | t], target, sum, acc) do
     [-h, h]
     |> Enum.reduce(acc, &(dfs_visit(t, target, sum + &1, acc) + &2))
   end

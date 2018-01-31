@@ -23,14 +23,16 @@ defmodule PerfectSquare do
 
   def run(0), do: 0
   def run(1), do: 1
+
   def run(n) do
-    Enum.reduce(2..n, %{0 => 0, 1 => 1}, fn(i, m) ->
+    Enum.reduce(2..n, %{0 => 0, 1 => 1}, fn i, m ->
       min =
         Enum.take_while(1..i, &(&1 * &1 <= i))
-        |> Enum.reduce(i, fn(x, acc) ->
+        |> Enum.reduce(i, fn x, acc ->
           min = Map.get(m, i - x * x) + 1
           if min < acc, do: min, else: acc
         end)
+
       Map.put(m, i, min)
     end)
     |> Map.get(n)

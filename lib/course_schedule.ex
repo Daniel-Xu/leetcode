@@ -1,11 +1,12 @@
 defmodule CourseSchedule do
   def run(n, deps) do
     # %{0 => 1, 1 => 2}
-    s = Enum.reduce(deps, %{}, fn([x, y], acc) ->
-      Map.put(acc, x, y)
-    end)
+    s =
+      Enum.reduce(deps, %{}, fn [x, y], acc ->
+        Map.put(acc, x, y)
+      end)
 
-    Enum.reduce_while(s, false, fn({n, _v}, acc) ->
+    Enum.reduce_while(s, false, fn {n, _v}, acc ->
       if check(s, n, n) == true, do: {:halt, false}, else: {:cont, true}
     end)
   end
