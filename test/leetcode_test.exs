@@ -462,4 +462,23 @@ defmodule LeetcodeTest do
     tree = TreeNode.new(10, TreeNode.new(10), TreeNode.new(1))
     assert ValidBST.run(tree) == false
   end
+
+  test "LRU" do
+    cache = LRU.new(2)
+    cache = LRU.put(cache, 1, 1)
+    cache = LRU.put(cache, 1, 1)
+    cache = LRU.put(cache, 2, 2)
+    {n, cache} = LRU.get(cache, 1)
+    assert n == 1
+    cache = LRU.put(cache, 3, 3)
+    {n, cache} = LRU.get(cache, 2)
+    assert n == -1
+    cache = LRU.put(cache, 4, 4)
+    {n, cache} = LRU.get(cache, 1)
+    assert n == -1
+    {n, cache} = LRU.get(cache, 3)
+    assert n == 3
+    {n, _cache} = LRU.get(cache, 4)
+    assert n == 4
+  end
 end
