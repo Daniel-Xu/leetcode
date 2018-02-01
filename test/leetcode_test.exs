@@ -481,6 +481,15 @@ defmodule LeetcodeTest do
     {n, _cache} = LRU.get(cache, 4)
     assert n == 4
   end
+
+  test "decode way" do
+    assert DecodeWay.run("122312342432") == 30
+    assert DecodeWay.run("12") == 2
+    assert DecodeWay.run("993202837212210") == 5
+    assert DecodeWay.run("993202837212210") == 5
+    assert DecodeWay.run("993202837212290") == 0
+  end
+
   test "trie" do
     t = Trie.new("apple")
     t = Trie.insert(t, "ab")
