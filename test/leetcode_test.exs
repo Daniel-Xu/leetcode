@@ -513,4 +513,10 @@ defmodule LeetcodeTest do
   test "word search 2" do
     assert WordSearch2.run(["oath","pea","eat","rain"]) |> Enum.sort() == ["eat","oath"] |> Enum.sort()
   end
+
+  test "valid cal" do
+    assert ValidCal.run("1 + 1") == 2
+    assert ValidCal.run(" 2-1 + 2 ") == 3
+    assert ValidCal.run("(1+(4+15+2)-3)+(6+8)") == 33
+  end
 end
