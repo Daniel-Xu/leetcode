@@ -502,4 +502,15 @@ defmodule LeetcodeTest do
     assert Trie.start_with(t, "ap") == ["ape", "apple", "ap"]
     assert Trie.start_with(t, "app") == ["apple"]
   end
+
+  test "word search" do
+    assert WordSearch.run("ABCCED") == true
+    assert WordSearch.run("ASADFBCCEESE") == true
+    assert WordSearch.run("SEE") == true
+    assert WordSearch.run("ABCB") == false
+  end
+
+  test "word search 2" do
+    assert WordSearch2.run(["oath","pea","eat","rain"]) |> Enum.sort() == ["eat","oath"] |> Enum.sort()
+  end
 end
