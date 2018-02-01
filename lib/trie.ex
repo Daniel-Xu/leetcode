@@ -36,11 +36,9 @@ defmodule Trie do
   end
 
   defp visit(trie, <<>>, acc) do
-    Enum.reduce(trie, [], fn
-      {:mark, :mark}, res ->
-        res ++ [acc]
-      {x, sub_trie}, res ->
-        res ++ visit(sub_trie, <<>>, acc <> <<x>>)
+    Enum.flat_map(trie, fn
+      {:mark, :mark} -> [acc]
+      {x, sub_trie} -> visit(sub_trie, <<>>, acc <> <<x>>)
     end)
   end
 
