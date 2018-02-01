@@ -20,6 +20,31 @@ defmodule Trie do
   end
 
   @doc """
+  Tyical DFS
+
+   a
+  p :mark
+  p e :mark
+  l
+  e
+  """
+  def start_with(%Trie{trie: trie}, binary) do
+    visit(trie, binary, binary)
+  end
+  defp visit(trie, <<h, t::binary>>, acc) do
+    if Map.has_key?(trie, h), do: visit(trie[h], t, acc), else: []
+  end
+
+  defp visit(trie, <<>>, acc) do
+    Enum.reduce(trie, [], fn
+      {:mark, :mark}, res ->
+        res ++ [acc]
+      {x, sub_trie}, res ->
+        res ++ visit(sub_trie, <<>>, acc <> <<x>>)
+    end)
+  end
+
+  @doc """
   if key is not present:
   = insert whole string to a new map
   if key is  present:

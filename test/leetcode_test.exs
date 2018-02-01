@@ -492,9 +492,14 @@ defmodule LeetcodeTest do
 
   test "trie" do
     t = Trie.new("apple")
-    t = Trie.insert(t, "ab")
+    t = Trie.insert(t, "ape")
+    t = Trie.insert(t, "ap")
 
     assert Trie.contains?(t, "apple") == true
-    assert Trie.contains?(t, "able") == false
+    assert Trie.contains?(t, "ape") == true
+    assert Trie.contains?(t, "ap") == true
+
+    assert Trie.start_with(t, "ap") == ["ape", "apple", "ap"]
+    assert Trie.start_with(t, "app") == ["apple"]
   end
 end
