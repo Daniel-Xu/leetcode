@@ -4,8 +4,13 @@ defmodule ValidCal do
   end
 
   @doc """
-  0 + (1+(4+15+2)-3)+(6+8))
-  0 + 1 + 1
+  (1+(4+15+2)-3)+(6+8))
+  1 + 1
+
+  this one we need to save previous acc and previous sign, also the current num
+
+  once we encounter (, we will save the previous res and sign in stack,
+  and when it comes to ), we add the previsous res and the current one
   """
 
   def do_run(<<>>, {res, num, sign}, _stack), do: res + sign * num

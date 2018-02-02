@@ -519,4 +519,11 @@ defmodule LeetcodeTest do
     assert ValidCal.run(" 2-1 + 2 ") == 3
     assert ValidCal.run("(1+(4+15+2)-3)+(6+8)") == 33
   end
+
+  test "valid cal2" do
+    assert ValidCal2.run("1 + 1") == 2
+    assert ValidCal2.run("-1 + 1") == 0
+    assert ValidCal2.run(" 2 * 1 + 2 ") == 4
+    assert ValidCal2.run("1 + 2 / 3 * 2") == 1
+  end
 end
