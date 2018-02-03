@@ -526,4 +526,21 @@ defmodule LeetcodeTest do
     assert ValidCal2.run(" 2 * 1 + 2 ") == 4
     assert ValidCal2.run("1 + 2 / 3 * 2") == 1
   end
+
+  test "findNeighbour" do
+    assert FindNeighbour.run([
+      [0, 1, 0, 1],
+      [0, 0, 1, 1]
+    ], {0, 3}) == [{1, 2}, {1, 3}]
+
+    assert FindNeighbour.run([
+      [0, 1, 0, 1],
+      [0, 0, 1, 1]
+    ], {0, 0}) == [{1, 1}, {1, 0}]
+
+    assert FindNeighbour.run([
+      [0, 1, 0, 1],
+      [0, 0, 1, 1]
+    ], {0, 1}) == []
+  end
 end
