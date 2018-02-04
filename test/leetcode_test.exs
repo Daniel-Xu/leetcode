@@ -219,6 +219,13 @@ defmodule LeetcodeTest do
     assert CourseSchedule.run(3, [[1, 2], [2, 1]]) == false
     assert CourseSchedule.run(3, [[1, 0], [2, 1]]) == true
     assert CourseSchedule.run(3, [[1, 0], [2, 0]]) == true
+    assert CourseSchedule.run(4, [[1,0],[2,0],[3,1],[3,2]]) == true
+    assert CourseSchedule.run(4, [[1,0],[2,0],[0, 3],[3,1]]) == false
+  end
+
+  test "course schedule 2" do
+    assert CourseSchedule2.run(4, [[1,0],[2,0],[3,1],[3,2]]) == [0, 1, 2, 3]
+    # assert CourseSchedule2.run(4, [[1,0],[2,0],[0, 3],[3,1]]) == []
   end
 
   test "tree node" do
