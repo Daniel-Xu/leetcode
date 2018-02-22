@@ -550,4 +550,31 @@ defmodule LeetcodeTest do
       [0, 0, 1, 1]
     ], {0, 1}) == []
   end
+
+  test "least common ancestor" do
+    tree = %TreeNode{
+      left: %TreeNode{
+        val: 4,
+        left: %TreeNode{
+          val: 11,
+          left: TreeNode.new(7),
+          right: TreeNode.new(2)
+        }
+      },
+      right: %TreeNode{
+        val: 8,
+        left: TreeNode.new(55),
+        right: %TreeNode{
+          val: 6,
+          left: TreeNode.new(13),
+          right: TreeNode.new(10)
+        }
+      },
+      val: 5
+    }
+
+    assert LeastCommonAncestor.run(tree, 11, 4) == 4
+    assert LeastCommonAncestor.run(tree, 13, 10) == 6
+    assert LeastCommonAncestor.run(tree, 7, 6) == 5
+  end
 end
