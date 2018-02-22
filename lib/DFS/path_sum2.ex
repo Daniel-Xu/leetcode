@@ -10,8 +10,8 @@ defmodule PathSum2 do
 
   def dfs_visit(root, acc, target) do
     Enum.filter([root.left, root.right], fn x -> not is_nil(x) end)
-    |> Enum.reduce([], fn x, res ->
-      res ++ dfs_visit(x, acc ++ [root.val], target)
+    |> Enum.flat_map(fn x ->
+      dfs_visit(x, acc ++ [root.val], target)
     end)
   end
 end
