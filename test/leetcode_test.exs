@@ -581,4 +581,11 @@ defmodule LeetcodeTest do
   test "quick sort" do
     assert QuickSort.quick_sort([2, 1, 3, 5, 4]) == [1, 2, 3, 4, 5]
   end
+
+  test "contains duplicates" do
+    assert ContainsDup.run([1, 2, 1, 3]) == true
+    assert ContainsDup.run([2, 1, 3]) == false
+    assert ContainsDup.run([]) == false
+  end
+
 end
