@@ -577,4 +577,8 @@ defmodule LeetcodeTest do
     assert LeastCommonAncestor.run(tree, 13, 10) == 6
     assert LeastCommonAncestor.run(tree, 7, 6) == 5
   end
+
+  test "quick sort" do
+    assert QuickSort.quick_sort([2, 1, 3, 5, 4]) == [1, 2, 3, 4, 5]
+  end
 end
