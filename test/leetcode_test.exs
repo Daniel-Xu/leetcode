@@ -588,4 +588,9 @@ defmodule LeetcodeTest do
     assert ContainsDup.run([]) == false
   end
 
+  test "summary range" do
+    assert SummaryRange.run([0,1,2,4,5,7]) == ["0->2", "4->5", "7"]
+    assert SummaryRange.run([1,2,4,5,7]) == ["1->2", "4->5", "7"]
+  end
+
 end
