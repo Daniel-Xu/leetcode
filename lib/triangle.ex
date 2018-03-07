@@ -9,9 +9,11 @@ defmodule Triangle do
 
   d[i][j]
   sub problem:
-  for 0..j-1
-    d[i-1][j]
-    min(d[i-i])
+  get sum for each item in the array, and store it in the map
+
+    d[i][j] = Min(d[i-1][j-1], d[i-1][j], d[i-1][j+1]) + V[i][j]
+
+  then just do a Min(map_value)
   """
   def run(triangle) do
     triangle =
