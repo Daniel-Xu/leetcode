@@ -617,4 +617,11 @@ defmodule LeetcodeTest do
   test "move zeros" do
     assert MoveZeros.run([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0]
   end
+
+  test "excel col" do
+    assert ExcelCol.run(100) == "CV"
+    assert ExcelCol.run(1000) == "ALL"
+    assert ExcelCol.run(1) == "A"
+    assert ExcelCol.run(28) == "AB"
+  end
 end
