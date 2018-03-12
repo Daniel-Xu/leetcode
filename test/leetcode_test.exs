@@ -624,4 +624,10 @@ defmodule LeetcodeTest do
     assert ExcelCol.run(1) == "A"
     assert ExcelCol.run(28) == "AB"
   end
+
+  test "pow" do
+    assert Pow.run(2.0, 10) == 1024
+    assert Pow.run(2.1, 3) == 9.26100
+  end
+
 end
