@@ -613,4 +613,8 @@ defmodule LeetcodeTest do
     assert SortColor.run([1, 0, 1, 2, 2]) == [0, 1, 1, 2, 2]
     assert SortColor.run([2, 1, 0, 1, 2]) == [0, 1, 1, 2, 2]
   end
+
+  test "move zeros" do
+    assert MoveZeros.run([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0]
+  end
 end
