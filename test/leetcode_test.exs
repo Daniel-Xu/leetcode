@@ -593,4 +593,12 @@ defmodule LeetcodeTest do
     assert SummaryRange.run([1,2,4,5,7]) == ["1->2", "4->5", "7"]
   end
 
+  test "subset" do
+    assert Subset.run(1) == []
+  end
+
+  test "valid Pal" do
+    assert ValidPal.run("A man, a plan, a canal: Panama") == true
+    assert ValidPal.run("race a car") == false
+  end
 end
