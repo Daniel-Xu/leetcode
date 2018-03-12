@@ -607,4 +607,9 @@ defmodule LeetcodeTest do
     assert Sqrt.run(8) == 2
     assert Sqrt.run(16) == 4
   end
+
+  test "sort color" do
+    assert SortColor.run([1, 0, 1, 2, 2]) == [0, 1, 1, 2, 2]
+    assert SortColor.run([2, 1, 0, 1, 2]) == [0, 1, 1, 2, 2]
+  end
 end
