@@ -601,4 +601,10 @@ defmodule LeetcodeTest do
     assert ValidPal.run("A man, a plan, a canal: Panama") == true
     assert ValidPal.run("race a car") == false
   end
+
+  test "sqrt" do
+    assert Sqrt.run(4) == 2
+    assert Sqrt.run(8) == 2
+    assert Sqrt.run(16) == 4
+  end
 end
