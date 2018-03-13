@@ -630,4 +630,11 @@ defmodule LeetcodeTest do
     assert Pow.run(2.1, 3) == 9.26100
   end
 
+
+  test " h index" do
+    assert HIndex.run([3, 0, 6, 1, 5]) == 3
+    assert HIndex.run2([3, 0, 6, 1, 5]) == 3
+    assert HIndex.run2([0, 1, 5, 6, 7]) == 3
+    assert HIndex.run2([0, 1, 6, 7]) == 2
+  end
 end
