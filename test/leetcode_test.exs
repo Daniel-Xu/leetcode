@@ -631,10 +631,16 @@ defmodule LeetcodeTest do
   end
 
 
-  test " h index" do
+  test " h index I & II" do
     assert HIndex.run([3, 0, 6, 1, 5]) == 3
     assert HIndex.run2([3, 0, 6, 1, 5]) == 3
     assert HIndex.run2([0, 1, 5, 6, 7]) == 3
     assert HIndex.run2([0, 1, 6, 7]) == 2
   end
+
+  test "add binary" do
+    assert AddBinary.run("10", "11") == "101"
+    assert AddBinary.run("1010", "1001") == "10011"
+  end
+
 end
