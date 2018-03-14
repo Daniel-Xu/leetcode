@@ -690,4 +690,17 @@ defmodule LeetcodeTest do
       ]
     ) == 3
   end
+
+  test "merge interval" do
+    assert MergeInterval.run([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]
+    assert MergeInterval.run([[1,3],[5,6],[8,10],[15,18]]) == [[1,3], [5, 6], [8,10],[15,18]]
+    assert MergeInterval.run([[1,3]]) == [[1,3]]
+  end
+
+  test "valid pal 2" do
+    assert ValidPal2.run("abca") == true
+    assert ValidPal2.run("abbca") == true
+    assert ValidPal2.run("aebca") == false
+    assert ValidPal2.run("cde") == false
+  end
 end
