@@ -708,4 +708,20 @@ defmodule LeetcodeTest do
     assert MiniWindowSubstr.run("ADOBECODEBANC", "ABC") == "BANC"
   end
 
+  test "levle order" do
+    tree = %TreeNode{
+      left: %TreeNode{
+        val: 2,
+        left: TreeNode.new(4),
+        right: TreeNode.new(5)
+      },
+      right: TreeNode.new(3),
+      val: 1
+    }
+    assert LevelOrder.run(tree) == [
+      [1],
+      [2, 3],
+      [4, 5]
+    ]
+  end
 end
