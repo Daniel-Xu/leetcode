@@ -643,4 +643,23 @@ defmodule LeetcodeTest do
     assert AddBinary.run("1010", "1001") == "10011"
   end
 
+  test "number of islands" do
+    assert NumberOfIsland.run(
+      [
+        [1, 1, 1, 1, 0],
+        [1, 1, 0, 1, 0],
+        [1, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0]
+      ]
+    ) == 1
+
+    assert NumberOfIsland.run(
+      [
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 1, 1]
+      ]
+    ) == 3
+  end
 end
