@@ -703,4 +703,9 @@ defmodule LeetcodeTest do
     assert ValidPal2.run("aebca") == false
     assert ValidPal2.run("cde") == false
   end
+
+  test " mini window subtr" do
+    assert MiniWindowSubstr.run("ADOBECODEBANC", "ABC") == "BANC"
+  end
+
 end
