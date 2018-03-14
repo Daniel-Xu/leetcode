@@ -663,6 +663,14 @@ defmodule LeetcodeTest do
     assert DiameterTree.run(tree) == 3
   end
 
+  test "3 sum" do
+    assert ThreeSum.run([-1, 0, 1, 2, -1, -4]) ==
+      [
+        [-1, 0, 1],
+        [-1, -1, 2]
+      ]
+  end
+
   test "number of islands" do
     assert NumberOfIsland.run(
       [
