@@ -643,6 +643,12 @@ defmodule LeetcodeTest do
     assert AddBinary.run("1010", "1001") == "10011"
   end
 
+  test "one edit distance" do
+    assert OneEditDistance.run("ab", "ac") == true
+    assert OneEditDistance.run("ab", "acb") == true
+    assert OneEditDistance.run("abde", "acb") == false
+  end
+
   test "number of islands" do
     assert NumberOfIsland.run(
       [
