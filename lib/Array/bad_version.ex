@@ -3,7 +3,7 @@ defmodule BadVersion do
     process(nums, 0, length(nums) - 1)
   end
 
-  defp process(nums, left, fight) when left <= right do
+  defp process(nums, left, right) when left <= right do
     mid = div(left + right, 2)
 
     case isBadVersion(mid) do

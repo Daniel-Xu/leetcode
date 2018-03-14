@@ -275,7 +275,7 @@ defmodule LeetcodeTest do
     assert TreeNode.in_order_traversal(tree) == [30, 22, 15, 18, 35, 3, 14, 8, 11, 4, 25]
     assert TreeNode.post_order_traversal(tree) == [30, 22, 35, 18, 15, 14, 11, 25, 4, 8, 3]
     assert TreeNode.queue_traversal(tree) == [3, 15, 8, 22, 18, 14, 4, 30, 35, 11, 25]
-    assert TreeNode.height(tree) == 4
+    assert TreeNode.height(tree) == 3
     assert TreeNode.build_bst_tree([2, 1, 3]) == %TreeNode{val: 2, left: %TreeNode{val: 1, left: nil, right: nil}, right: %TreeNode{val: 3, left: nil, right: nil}}
 
     assert TreeNode.build_bst_from_sorted_list([1,2,3,4,5,6]) ==
@@ -647,6 +647,20 @@ defmodule LeetcodeTest do
     assert OneEditDistance.run("ab", "ac") == true
     assert OneEditDistance.run("ab", "acb") == true
     assert OneEditDistance.run("abde", "acb") == false
+  end
+
+  test "diameter of binary tree" do
+    tree = %TreeNode{
+      left: %TreeNode{
+        val: 2,
+        left: TreeNode.new(4),
+        right: TreeNode.new(5)
+      },
+      right: TreeNode.new(3),
+      val: 1
+    }
+
+    assert DiameterTree.run(tree) == 3
   end
 
   test "number of islands" do
