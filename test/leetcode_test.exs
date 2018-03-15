@@ -594,10 +594,6 @@ defmodule LeetcodeTest do
     assert SummaryRange.run([1,2,4,5,7]) == ["1->2", "4->5", "7"]
   end
 
-  test "subset" do
-    assert Subset.run(1) == []
-  end
-
   test "valid Pal" do
     assert ValidPal.run("A man, a plan, a canal: Panama") == true
     assert ValidPal.run("race a car") == false
@@ -723,5 +719,34 @@ defmodule LeetcodeTest do
       [2, 3],
       [4, 5]
     ]
+  end
+
+  test "subset" do
+    assert Subset.run([1, 2, 3]) ==
+      [
+        [3],
+        [1],
+        [2],
+        [1,2,3],
+        [1,3],
+        [2,3],
+        [1,2],
+        []
+      ] |> Enum.sort()
+
+    assert Subset2.run([1, 2, 2]) ==
+      [
+        [2],
+        [1],
+        [1,2,2],
+        [2,2],
+        [1,2],
+        []
+      ]      |> Enum.sort()
+  end
+
+  test " english to words" do
+    assert EnglishToWords.run(123) == "One Hundred Twenty Three"
+    assert EnglishToWords.run(1234567) == "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
   end
 end
