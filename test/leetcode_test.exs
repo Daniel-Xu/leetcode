@@ -749,4 +749,8 @@ defmodule LeetcodeTest do
     assert EnglishToWords.run(123) == "One Hundred Twenty Three"
     assert EnglishToWords.run(1234567) == "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
   end
+
+  test " count and say" do
+    assert CountSay.run(5) == "111221"
+  end
 end
