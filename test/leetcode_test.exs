@@ -753,4 +753,16 @@ defmodule LeetcodeTest do
   test " count and say" do
     assert CountSay.run(5) == "111221"
   end
+
+  test " max subarray sum to k" do
+    assert MaxSubArraySum.run([1, -1, 5, -2, 3], 3) == 4
+    assert MaxSubArraySum.run([-2, -1, 2, 1], 1) == 2
+    assert MaxSubArraySum.run([0, 0, 0], 0) == 3
+  end
+
+  test "subarray sum to k" do
+    assert SubArraySumToK.run([1, -1, 5, -2, 3], 3) == 3
+    assert SubArraySumToK.run([-2, -1, 2, 1], 1) == 2
+    assert SubArraySumToK.run([0, 0, 0], 0) == 6
+  end
 end
