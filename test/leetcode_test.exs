@@ -765,4 +765,12 @@ defmodule LeetcodeTest do
     assert SubArraySumToK.run([-2, -1, 2, 1], 1) == 2
     assert SubArraySumToK.run([0, 0, 0], 0) == 6
   end
+
+  test "mini subarray sum to k" do
+    assert MiniSubarraySum.run([2, 3, 1, 2, 4, 3], 7) == 2
+    assert MiniSubarraySum.run([2, 3, 1, 2, 4, 3], 100) == 0
+
+    assert MiniSubarraySum.run2([2, 3, 1, 2, 4, 3], 7) == 2
+    assert MiniSubarraySum.run2([2, 3, 1, 2, 4, 3], 100) == 0
+  end
 end
