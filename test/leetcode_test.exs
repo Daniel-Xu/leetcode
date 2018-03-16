@@ -789,6 +789,8 @@ defmodule LeetcodeTest do
     assert MeetingRoom.run([[0, 30], [5, 10], [15, 20]]) == false
     assert MeetingRoom.run([[0, 1], [5, 10], [15, 20]]) == true
     assert MeetingRoom.run([[0, 10]]) == true
+    assert MeetingRoom2.run([[0, 10]]) == 1
+    assert MeetingRoom2.run([[0, 30], [5, 10], [15, 20]]) == 2
   end
 
   test "merge k list" do
