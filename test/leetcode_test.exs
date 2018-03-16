@@ -797,4 +797,10 @@ defmodule LeetcodeTest do
     assert MergeKList.run([[1, 2, 3], [2, 3, 5]]) == [1, 2, 2, 3, 3, 5]
     assert MergeKList.run([[1, 2, 3], [2, 3, 5], [0, 1]]) == [0, 1, 1, 2, 2, 3, 3, 5]
   end
+
+  test "k closest element" do
+    assert KClosestElement.run([1, 2, 3, 4, 5], 3, 3) == [2, 3, 4]
+    assert KClosestElement.run([1, 2, 3, 4, 5], 4, -1) == [1, 2, 3, 4]
+    assert KClosestElement.run([1, 2, 3, 4, 5], 4, 3) == [1, 2, 3, 4]
+  end
 end
