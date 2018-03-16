@@ -773,4 +773,15 @@ defmodule LeetcodeTest do
     assert MiniSubarraySum.run2([2, 3, 1, 2, 4, 3], 7) == 2
     assert MiniSubarraySum.run2([2, 3, 1, 2, 4, 3], 100) == 0
   end
+
+  test "continuousSubSum" do
+    assert ContinuousSubSum.run([0, 1, 0], 0) == false
+    assert ContinuousSubSum.run([0, 1, 0, 0], 0) == true
+    assert ContinuousSubSum.run([0, 0, 1], 0) == true
+    assert ContinuousSubSum.run([0], 0) == false
+    assert ContinuousSubSum.run([0, 0], 0) == true
+    assert ContinuousSubSum.run([0, 6], 6) == true
+    assert ContinuousSubSum.run([23, 2, 4, 6, 7], 6) == true
+    assert ContinuousSubSum.run([23, 2, 6, 4, 7], 6) == true
+  end
 end
