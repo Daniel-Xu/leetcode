@@ -784,4 +784,15 @@ defmodule LeetcodeTest do
     assert ContinuousSubSum.run([23, 2, 4, 6, 7], 6) == true
     assert ContinuousSubSum.run([23, 2, 6, 4, 7], 6) == true
   end
+
+  test "meeting room" do
+    assert MeetingRoom.run([[0, 30], [5, 10], [15, 20]]) == false
+    assert MeetingRoom.run([[0, 1], [5, 10], [15, 20]]) == true
+    assert MeetingRoom.run([[0, 10]]) == true
+  end
+
+  test "merge k list" do
+    assert MergeKList.run([[1, 2, 3], [2, 3, 5]]) == [1, 2, 2, 3, 3, 5]
+    assert MergeKList.run([[1, 2, 3], [2, 3, 5], [0, 1]]) == [0, 1, 1, 2, 2, 3, 3, 5]
+  end
 end
